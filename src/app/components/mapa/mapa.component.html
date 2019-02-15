@@ -1,0 +1,21 @@
+<div class="constainer">
+    <agm-map (mapClick)="agregarMarcador($event)" [latitude]="lat" [longitude]="lng" [zoom]= "18">
+      <agm-marker *ngFor="let marcador of marcadores" [latitude]="marcador.lat" [longitude]="marcador.lng">
+          <agm-info-window>
+              <div>
+                 <h2>{{ marcador.titulo}}</h2>
+                 <p>{{marcador.desc}}</p>
+              </div>
+          </agm-info-window>
+      </agm-marker>
+    </agm-map>
+    <ng-container *ngIf="establishments">
+      <h1>Ola ke ase</h1>
+      <div *ngFor="let establishment of establishments.data" class="container">
+        <!-- {{ establishment | json }} -->
+        <app-establishments>
+          
+        </app-establishments>
+      </div>
+    </ng-container>
+</div>
