@@ -1,14 +1,15 @@
-<h1>Peya App</h1>
-<hr>
-<form (ngSubmit)="getLogin()">
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" name="userName" [(ngModel)]="userName">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" name="password" [(ngModel)]="password">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-<app-main></app-main>
+<div class="top-sep container">
+    <h1 class="title-peya-red">Peya Delivery</h1>
+    <hr>
+    <form (ngSubmit)="getLogin()">
+        <div class="form-group">
+            <label for="email">Correo</label>
+            <input type="email" class="form-control" name="userName" [(ngModel)]="userName">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="password">
+        </div>
+        <button type="submit" class="btn btn-danger">Submit</button>
+    </form>
+</div>

@@ -16,6 +16,7 @@ import { MapaComponent } from './components/mapa/mapa.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { EstablishmentsComponent } from './components/establishments/establishments.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EstablishmentsComponent } from './components/establishments/establishme
     LoginComponent,
     MainComponent,
     MapaComponent,
-    EstablishmentsComponent
+    EstablishmentsComponent,
+    NavbarComponent
   ],
   imports: [
     HttpClientModule,

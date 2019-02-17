@@ -9,13 +9,27 @@
           </agm-info-window>
       </agm-marker>
     </agm-map>
+    
     <ng-container *ngIf="establishments">
-      <h1>Ola ke ase</h1>
-      <div *ngFor="let establishment of establishments.data" class="container">
-        <!-- {{ establishment | json }} -->
-        <app-establishments>
-          
-        </app-establishments>
+      <hr>
+      <h2>Lista de establecimientos</h2>
+      <div *ngFor="let establishment of establishments.data">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    <img src="https://d1v73nxuzaqxgd.cloudfront.net/restaurants/{{establishment.logo}}" width="150px" alt="">
+                  </div>
+                  <div class="col-sm">
+                    <h4>{{ establishment.name }}</h4>
+                    <p class="text-succes">{{ establishment.generalScore }}</p>
+                  </div>
+                  <div class="col-sm">
+                    {{ establishment.allCategories }}
+                  </div>
+                </div>
+              </div>
+        </div>
       </div>
     </ng-container>
 </div>

@@ -7,8 +7,9 @@ export class ProductsService {
   points: string;
   constructor(private http: HttpClient) {}
 
-  getEstablishments() {
+  getEstablishments(points) {
     const auth = localStorage.getItem('access_token');
+    console.log(points);
     const headers = new HttpHeaders({
       Authorization: auth
     });

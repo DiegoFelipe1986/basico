@@ -15,8 +15,7 @@ export class MapaComponent implements OnInit {
   lng = -56.197949;
 
   constructor(public products: ProductsService, public router: Router) {
-    const nuevoMarcador = new Marcador(-34.9041727, -56.197949);
-    console.log(nuevoMarcador);
+    const nuevoMarcador = new Marcador(-34.9041727,-56.197949);
     this.marcadores.push(nuevoMarcador);
   }
 
@@ -25,13 +24,12 @@ export class MapaComponent implements OnInit {
   agregarMarcador(evento) {
     const coords: { lat: number; lng: number } = evento.coords;
     const point = `${evento.coords.lat},${evento.coords.lng}`;
-    this.products.getEstablishments().subscribe((info: any) => {
+    console.log(point);
+    this.products.getEstablishments(this.marcadores).subscribe((info: any) => {
         this.establishments = info;
-        console.log(this.establishments.data);
     });
-    const nuevoMarcador = new Marcador(coords.lat, coords.lng);
+    const nuevoMarcador = new Marcador(evento.coords.lat, evento.coords.lng);
     this.marcadores.push(nuevoMarcador);
-    console.log(evento);
     return point;
   }
 }

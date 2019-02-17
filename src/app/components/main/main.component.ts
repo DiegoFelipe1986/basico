@@ -26,9 +26,6 @@ export class MainComponent implements OnInit {
     });
   }
 
-  getSearch() {
-    console.log('hola');
-  }
 
 
 
